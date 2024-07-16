@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>
+    <a id="someId" type="text/html" hreflang="bg-bg" rel="nofollow" target="_blank" href="#">resources</a>
+</p>
+<button onclick="getAttributes()">Click here to get attributes value</button>
+
+<script>
+function getAttributes() {
+    const link = document.querySelector('#someId')
+    console.log(`href: ${link.href}`)
+    console.log(`hreflang: ${link.hreflang}`)
+    console.log(`rel: ${link.rel}`)
+    console.log(`target: ${link.target}`)
+    console.log(`type: ${link.type}`)
+}
+</script>
+</body>
+</html>
