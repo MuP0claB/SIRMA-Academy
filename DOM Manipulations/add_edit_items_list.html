@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive List</title>
+    <style>
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="list-app">
+    <p>Click on the item to change the text, or click on the button to create a new item.</p>
+    <ul id="items">
+        <li>Map, filter, reduce</li>
+        <li>The DOM</li>
+        <li>Callbacks</li>
+    </ul>
+    <input type="text" id="input" placeholder="Edit item or create new">
+    <button id="button">Create New</button>
+</div>
+
+<script>
+    function createNewItem() {
+        const ul = document.querySelector('#items');
+        const input = document.querySelector('#newItemText');
+        const text = input.value;
+        const li = document.createElement('li');
+        li.textContent = text;
+        li.onclick = function() {
+            const newText = prompt('Enter new text:', li.textContent);
+            if (newText !== null) {
+                li.textContent = newText;
+            }
+        };
+        ul.appendChild(li);
+        input.value = '';
+    }
+</script>
+</body>
+</html>
